@@ -1,0 +1,20 @@
+.order-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Yatayda ortalamak için */
+    background-color: #CE2829; /* Arka plan rengi */
+    text-align: center;
+    color: white;
+    width: 100vw; /* Genişlik: Tam ekran */
+    height: 100vh; /* Yükseklik: Tam ekran */
+    margin: 0; /* Varsayılan margin'i sıfırlar */
+    padding: 0; /* Varsayılan padding'i sıfırlar */
+    overflow: hidden; /* Scroll barları engeller */
+}
+
+.order-result h1 {
+    font-family: 'Arial', sans-serif;
+    margin: 0; 
+    padding: 0; 
+}
