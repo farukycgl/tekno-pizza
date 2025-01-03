@@ -1,0 +1,43 @@
+.footer {
+    background-color: #292929;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: "Barlow", sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+.footer-contact h2 {
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 1.5rem;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-contact p img {
+    padding-right: 0.2rem;
+}
+
+.footer-contact p {
+    display: flex;
+    text-align: center;
+    font-size: 0.7rem;
+
+}
+
+.footer-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-menu p{
+    display: flex;
+    text-align: center;
+    font-size: 0.7rem;
+}
