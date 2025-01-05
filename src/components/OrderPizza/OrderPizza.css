@@ -6,8 +6,12 @@
     justify-content: flex-start;
     align-items: center;
     margin-left: 550px;
+    margin-bottom: 100px;
 }
 
+.container-aciklama {
+    background-color: #FAF7F2;
+}
 .secim-yap {
     display: flex;
     justify-content: space-between;
@@ -102,4 +106,19 @@ p {
 
 option {
     color: #5F5F5F;
+}
+
+.order-error {
+    color: red;
+}
+
+.siparisver-btn{
+    border: 0px;
+    width: 100vw;
+    height: 30px
+}
+
+.artir-azalt-btn{
+    border: 0px;
+    width: 50px;
 }

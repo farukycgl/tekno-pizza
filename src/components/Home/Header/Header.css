@@ -11,26 +11,3 @@
     margin: 0;
     padding: 0;
 }
-
-.links {
-    display: flex;
-    width: Hug (182px);
-    height: Hug (29px);
-    gap: 20px;
-    list-style-type: none;
-}
-
-ul {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: -270px;
-    margin-bottom: -50px;
-}
-
-li a {
-    color:white;
-}
-
-span {
-    font-weight: bold;
-}
