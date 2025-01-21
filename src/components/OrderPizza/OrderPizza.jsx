@@ -1,7 +1,7 @@
 
 import { Button, Form, FormGroup, Input, Label } from "reactstrap"
 import "./OrderPizza.css"
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 

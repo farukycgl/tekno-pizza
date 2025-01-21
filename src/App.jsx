@@ -16,10 +16,10 @@ function App() {
   return (<>
     <Header />
       <Switch>
-        <Route path="/home" exact><Home/></Route>
-        <Route path="/orderpizza" ><OrderPizza/></Route>
-        <Route path="/orderresult"><OrderResult /></Route>
-        <Route path="*"><ErrorPage/></Route>
+        <Route path="/" exact component={Home}/>
+        <Route path="/orderpizza" component={OrderPizza} />
+        <Route path="/orderresult" component={OrderResult}/>
+        <Route path="*" component={ErrorPage}/>
       </Switch>
       <Footer/>
   </>
