@@ -9,7 +9,7 @@ export default function Button({
     disabled = false
 }) {
 
-    return (<button type={type} className={className} onClick={onClick} disabled={disabled}>
+    return (<button type={type} className={`button ${className}`} onClick={onClick} disabled={disabled}>
         {children} </button>
     )
 }

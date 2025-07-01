@@ -1,5 +1,9 @@
-.footer {
+.container-footer {
     background-color: #292929;
+    padding-top: 2rem;
+}
+
+.footer {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -27,7 +31,6 @@
     display: flex;
     text-align: center;
     font-size: 0.7rem;
-
 }
 
 .footer-menu {
@@ -40,4 +43,16 @@
     display: flex;
     text-align: center;
     font-size: 0.7rem;
+}
+
+.container-img {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}
+
+.bottom-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

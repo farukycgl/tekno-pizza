@@ -1,4 +1,6 @@
-export default function NavbarTr() {
+import "./MainNavbarTr.css"
+
+export default function MainNavbarTr() {
 
     return (
         <div className="navbar-container">

@@ -1,6 +1,6 @@
-import "./NavbarEn.css";
+import "./MainNavbarEn.css";
 
-export default function NavbarEn() {
+export default function MainNavbarEn() {
 
     return (
         <div className="navbar-container">

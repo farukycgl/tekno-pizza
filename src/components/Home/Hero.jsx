@@ -1,4 +1,4 @@
-import Button from "../../Button/Button";
+import Button from "../Button/Button";
 import "./Hero.css";
 import { useHistory } from "react-router-dom";
 
@@ -10,7 +10,7 @@ export default function Hero() {
         <img src="\images\iteration-1-images\firsati-kacirma.png" alt="firsati-kacirma" />
         <div className="text">
             <h1>KOD ACIKTIRIR <br />PİZZA, DOYURUR</h1>
-            <Button className="button-hero"
+            <Button className="button-hero cursor-pointer"
                 onClick={() => history.push("/orderpizza")}>
                 ACIKTIM</Button>
         </div>
