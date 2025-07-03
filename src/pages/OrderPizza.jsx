@@ -86,7 +86,7 @@ export default function OrderPizza() {
 
         const id = crypto.randomUUID();
         setForm({ ...form, id });
-        axios.post(" https://reqres.in/api/pizza", form)
+        axios.post("https://reqres.in/api/pizza", form)
             .then((data) => {
                 history.push("/orderresult", { ...form, ekMalzemeFiyati, toplamTutar });
                 console.log(data.data);
@@ -128,12 +128,12 @@ export default function OrderPizza() {
             </div>
             <div className="secim-yap">
                 <div className="boyut-sec">
-                    <h3>Boyut Seç<span style={{ color: "red", fontWeight: "bold" }}>*</span></h3>
+                    <h3 className="font-bold">Boyut Seç<span style={{ color: "red", fontWeight: "bold" }}>*</span></h3>
                     {error.boyut && <p className="order-error">{form.boyut}</p>}
-                    {pizza.boyut.map((boyut) => (
-                        <Form>
-                            <FormGroup check>
-                                <Label check htmlFor={boyut} key={boyut}>
+                    <Form>
+                        {pizza.boyut.map((boyut) => (
+                            <FormGroup check key={boyut}>
+                                <Label check htmlFor={boyut}>
                                     <Input
                                         name="pizzaBoyut"
                                         type="radio"
@@ -142,16 +142,16 @@ export default function OrderPizza() {
                                         value={boyut}
                                         onChange={(e) => setForm({ ...form, boyut: e.target.value })}
                                     />
-                                    {""}
-                                    {boyut.charAt(0).toUpperCase() + boyut.slice(1)}
+                                    {boyut}
                                 </Label>
                             </FormGroup>
-                        </Form>
-                    ))}
+                        ))}
+                    </Form>
+
                 </div>
 
                 <div className="hamur-sec">
-                    <h3>Hamur Seç<span style={{ color: "red", fontWeight: "bold" }}>*</span></h3>
+                    <h3 className="font-bold">Hamur Seç<span style={{ color: "red", fontWeight: "bold" }}>*</span></h3>
                     {error.hamur && (<p className="order-error">{error.hamur}</p>)}
                     <Form>
                         <FormGroup>
@@ -186,66 +186,42 @@ export default function OrderPizza() {
             </div>
             <div className="checkbox-container">
                 <div className="malzeme-text">
-                    <h3>Ek Malzemeler</h3>
+                    <h3 className="font-bold">Ek Malzemeler</h3>
                     {error.malzemeler && <p className="order-error">{error.malzemeler}</p>}
                     <p>En Fazla 10 malzeme seçebilirsiniz. 5₺</p>
                 </div>
-                <div className="checkbox">
-                    {pizza.malzemeler.map((malzemeler) => (
-                        <Form >
-                            <FormGroup check className="checkbox-item">
-                                <Label check key={malzemeler}>
-                                    <Input type="checkbox"
-                                        id="malzeme-ekle"
-                                        name="malzeme-ekle"
-                                        value={malzemeler}
-                                        checked={form.malzemeler.includes(malzemeler)}
-                                        onChange={handleMaterials}
-                                    />
-                                    {malzemeler}
-                                </Label>
-                            </FormGroup>
-                        </Form>
-                    ))}
-
-                </div>
+                <Form className="checkbox-form">
+                    <div className="checkbox">
+                        {pizza.malzemeler.map((malzeme) => (
+                            <div key={malzeme} className="checkbox-item">
+                                <input
+                                    type="checkbox"
+                                    id={malzeme}
+                                    value={malzeme}
+                                    checked={form.malzemeler.includes(malzeme)}
+                                    onChange={handleMaterials}
+                                />
+                                <label htmlFor={malzeme}>{malzeme}</label>
+                            </div>
+                        ))}
+                    </div>
+                </Form>
             </div>
 
             <div className="order-note">
-                <div>
-                    <Form>
-                        <FormGroup>
-                            <Input
-                                id="name"
-                                name="name"
-                                type="text"
-                                value={form.kisiIsmi}
-                                placeholder="Lütfen isminizi giriniz."
-                                onChange={(e) => setForm({
-                                    ...form, kisiIsmi: e.target.value
-                                })}
-
-                            />
-                            {error.kisiIsmi && <p className="order-error">{error.kisiIsmi}</p>}
-                        </FormGroup>
-                    </Form>
-                </div>
-                <div>
-                    <h3 style={{ fontWeight: "bold" }}>Sipariş Notu</h3>
-                    <Form>
-
-                        <FormGroup>
-                            <Label for="exampleText" >
-                            </Label>
-                            <Input
-                                id="exampleText"
-                                name="text"
-                                type="textarea"
-                                placeholder="Siparişine eklemek istediğin bir not var mı?"
-                            />
-                        </FormGroup>
-                    </Form>
-                </div>
+                <h3 className="font-bold">Sipariş Notu</h3>
+                <Form>
+                    <FormGroup>
+                        <Label for="exampleText" >
+                        </Label>
+                        <Input
+                            id="exampleText"
+                            name="text"
+                            type="textarea"
+                            placeholder="Siparişine eklemek istediğin bir not var mı?"
+                        />
+                    </FormGroup>
+                </Form>
             </div>
 
             <div className="calculation">
@@ -255,7 +231,7 @@ export default function OrderPizza() {
                     <Button className="artir-azalt-btn" style={{ backgroundColor: "#FDC913" }} onClick={handeIncrease}>+</Button>
                 </div>
 
-                <div className="order-btn" style={{}}>
+                <div className="order-btn">
                     <h3>Sipariş Toplamı</h3>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                         <p style={{ fontWeight: "bold" }}>Seçimler</p>

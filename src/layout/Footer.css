@@ -1,6 +1,7 @@
 .container-footer {
     background-color: #292929;
     padding-top: 2rem;
+
 }
 
 .footer {
@@ -55,4 +56,24 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.bottom-part {
+    padding: 2rem 16rem 0rem 16rem;
+}
+
+.footer p {
+    color: white;
+}
+.footer h2 {
+    color: white;
+    font-size: 1.5rem;
+}
+.footer h3 {
+    color: white;
+    font-size: 1.5rem;
+}
+.footer h4 {
+    color: white;
+    font-size: 1.5rem;
 }
